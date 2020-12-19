@@ -5,8 +5,44 @@ namespace CoolCat
     class Program
     {
 
-        static void DrawCat(string line, bool isLast = false)
+        static readonly string[] coolCat = new string[]
         {
+            "  bb          bb  ",
+            "  byb        byb  ",
+            "  bbyb      bybb  ",
+            "  b byb    byb b  ",
+            "  b byb    byb b  ",
+            "  b byyb  byyb b  ",
+            "  b byyybbyyyb b  ",
+            "  b byyyyyyyyb b  ",
+            "  bbyyyyyyyyyybb  ",
+            "  byyyyyyyyyyyyb  ",
+            "  byyywwyywwyyyb  ",
+            "  bbbbbbyybbbbbb  ",
+            "  bbbbbbbbbbbbbb  ",
+            "  bbbbbbwwbbbbbb  ",
+            "  bybbbwwwwbbbyb  ",
+            "  byyyywbbwyyyyb  ",
+            " bwwwwwwbbwwwwwwb ",
+            "bwwwwwwbwwbwwwwwwb",
+            "bbbbwwwwbbwwwbbbbb",
+            "  bybbbbbbbbbbyb  ",
+            " byyy        yyyb ",
+            "byyyy        yyyyb",
+            "byyby        ybyyb",
+            " byby        ybyb ",
+            "  bbyy      yybb  ",
+            "   byybbbbbbyyb   ",
+            "  byyb      byyb  ",
+            " b  b        b  b ",
+            " bbbb        bbbb ",
+        };
+
+
+
+        static void DrawCat(string line)
+        {
+            Console.SetCursorPosition(Console.WindowWidth / 2 - line.Length, Console.CursorTop);            
 
             foreach (var character in line)
             {
@@ -21,49 +57,21 @@ namespace CoolCat
                 Console.BackgroundColor = color;
                 Console.Write("  ");
             }
-
-            if (!isLast)
-                Console.WriteLine();
+          
+            Console.WriteLine();
         }
 
-        static void Main(string[] args)
-        {
+        static void Main()
+        {               
+            Console.Title = "Cool Cat";
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.Clear();
+            Console.CursorTop = Console.WindowHeight / 2 - coolCat.Length / 2;
 
-            DrawCat("  bb          bb  ");
-            DrawCat("  byb        byb  ");
-            DrawCat("  bbyb      bybb  ");
-            DrawCat("  b byb    byb b  ");
-            DrawCat("  b byb    byb b  ");
-            DrawCat("  b byyb  byyb b  ");
-            DrawCat("  b byyybbyyyb b  ");
-            DrawCat("  b byyyyyyyyb b  ");
-            DrawCat("  bbyyyyyyyyyybb  ");
-            DrawCat("  byyyyyyyyyyyyb  ");
-            DrawCat("  byyywwyywwyyyb  ");
-            DrawCat("  bbbbbbyybbbbbb  ");
-            DrawCat("  bbbbbbbbbbbbbb  ");
-            DrawCat("  bbbbbbwwbbbbbb  ");
-            DrawCat("  bybbbwwwwbbbyb  ");
-            DrawCat("  byyyywbbwyyyyb  ");
-            DrawCat(" bwwwwwwbbwwwwwwb ");
-            DrawCat("bwwwwwwbwwbwwwwwwb");
-            DrawCat("bbbbwwwwbbwwwbbbbb");
-            DrawCat("  bybbbbbbbbbbyb  ");
-            DrawCat(" byyy        yyyb ");
-            DrawCat("byyyy        yyyyb");
-            DrawCat("byyby        ybyyb");
-            DrawCat(" byby        ybyb ");
-            DrawCat("  bbyy      yybb  ");
-            DrawCat("   byybbbbbbyyb   ");
-            DrawCat("  byyb      byyb  ");
-            DrawCat(" b  b        b  b ");
-            DrawCat(" bbbb        bbbb ");
-            DrawCat("                  ", true);
+            foreach (var line in coolCat)
+                DrawCat(line);
 
             Console.ReadLine();
         }
     }
 }
-
-
-

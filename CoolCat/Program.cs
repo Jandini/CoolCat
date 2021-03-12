@@ -4,7 +4,6 @@ namespace CoolCat
 {
     class Program
     {
-
         static readonly string[] coolCat = new string[]
         {
             "  bb          bb  ",
@@ -61,9 +60,9 @@ namespace CoolCat
             Console.WriteLine();
         }
 
-        static void Main()
-        {               
-            Console.Title = "Cool Cat";
+        static void Main(string[] args)
+        {          
+            Console.Title = "CoolCat";
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.Clear();
             Console.CursorTop = Console.WindowHeight / 2 - coolCat.Length / 2;
@@ -71,7 +70,7 @@ namespace CoolCat
             foreach (var line in coolCat)
                 DrawCat(line);
 
-            Console.ReadLine();
+            Console.ReadLine();            
         }
     }
 }
